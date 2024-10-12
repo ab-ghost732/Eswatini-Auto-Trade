@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eswatini Auto Trade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">Eswatini Auto Trade</div>
+            <nav>
+                <ul>
+                    <li><a href="#buy">Buy a Car</a></li>
+                    <li><a href="#sell">Sell My Car</a></li>
+                    <li><a href="#login">Register/Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Buy a Car Section -->
+        <section id="buy" class="section">
+            <h1>Buy a Car</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search cars by make, model, or year">
+                <button>Search</button>
+            </div>
+            <div class="car-listings">
+            <div class="car-item">
+    <h2>2014 Toyota Etios</h2>
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="images/car1-1.jpg" alt="car1.jpg"> class="active">
+            <img src="images/car1-2.jpg" alt="car2.jpg">
+            <img src="images/car1-3.jpg" alt="car3.jpg">
+            <img src="images/car1-4.jpg" alt="car4.jpg">
+            <img src="images/car1-5.jpg" alt="car5.jpg">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <div class="car-details">
+        <p>Price: E85,000</p>
+        <p>Location: Manzini, Eswatini</p>
+    </div>
+</div>
+                <!-- Add more car items as needed -->
+            </div>
+        </section>
+
+        <!-- Sell My Car Section -->
+        <section id="sell" class="section">
+            <h1>Sell Your Car</h1>
+            <p>Looking to sell your vehicle? Upload your car details and reach buyers across Eswatini.</p>
+            <button>Sell My Car</button>
+        </section>
+
+        <!-- Register/Login Section -->
+        <section id="login" class="section">
+            <h1>Register/Login</h1>
+            <p>Create an account to save your favorite cars, post ads, and more.</p>
+            <button>Register</button>
+            <button>Login</button>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Eswatini Auto Trade. All rights reserved.</p>
+        </div>
+    </footer>
+<script>
+let currentSlide = 0;
+showSlides(currentSlide);
+
+function changeSlide(n) {
+    showSlides(currentSlide += n);
+}
+
+function showSlides(n) {
+    let slides = document.querySelectorAll('.carousel-images img');
+    if (n >= slides.length) { currentSlide = 0; }
+    if (n < 0) { currentSlide = slides.length - 1; }
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentSlide) {
+            slide.classList.add('active');
+        }
+    });
+}
+</script>
+
+</body>
+</html>
